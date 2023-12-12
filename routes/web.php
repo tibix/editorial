@@ -19,8 +19,14 @@ use App\Http\Controllers\ListingController;
 // All listings
 Route::get('/', [ListingController::class, 'index']);
 
+
+// Show create form
+Route::get('/listing/create', [ListingController::class, 'create']);
+
 // Single listing
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
+
+Route::post('/listings', [ListingController::class, 'store']);
 
 Route::get('/info', function(){
     return phpinfo();
