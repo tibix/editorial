@@ -10,7 +10,7 @@
             <p class="mb-4">Post a gig to find a developer</p>
         </header>
 
-        <form method="POST" action="/listings">
+        <form method="POST" action="/listings" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">
                 <label
@@ -25,7 +25,7 @@
                     value="{{old('company')}}"
                 />
                 @error('company')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                    <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
@@ -41,7 +41,7 @@
                     value="{{old('title')}}"
                 />
                 @error('title')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
@@ -59,7 +59,7 @@
                     value="{{old('location')}}"
                 />
                 @error('location')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
@@ -74,7 +74,7 @@
                     value="{{old('email')}}"
                 />
                 @error('email')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
@@ -92,7 +92,7 @@
                     value="{{old('website')}}"
                 />
                 @error('website')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
@@ -108,7 +108,7 @@
                     value="{{old('tags')}}"
                 />
                 @error('tags')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
@@ -121,6 +121,9 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="logo"
                 />
+                @error('logo')
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-6">
@@ -137,7 +140,7 @@
                     placeholder="Include tasks, requirements, salary, etc"
                 >{{old('description')}}</textarea>
                 @error('description')
-                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                <p class="text-red-200 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
 
